@@ -1,4 +1,4 @@
-###inverse a int in +-2**31, for outrange return 0
+###inverse a int within +-2**31, for outrange return 0
 def reverse(x):
     """
     :type x: int
@@ -21,4 +21,4 @@ def reverse(x):
 
 ##check if it's possible to make it non-decreasing arrary by modify at most 1 element
 ##strs could use sorted function to become a list of sorted char
-        
+    

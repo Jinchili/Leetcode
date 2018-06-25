@@ -17,3 +17,32 @@ def findUnsortedSubarray( nums):
     diff_list.reverse()
     end=n-diff_list.index(True)
     return end-start
+
+##intersection of two linked list
+# Definition for singly-linked list.
+# class ListNode(object):
+#     def __init__(self, x):
+#         self.val = x
+#         self.next = None
+def getIntersectionNode(headA, headB):
+    """
+    :type head1, head1: ListNode
+    :rtype: ListNode
+    """
+    if (headA)==None or (headB)==None:
+        return None
+    pointA=headA
+    pointB=headB
+    while pointA!=pointB:
+        if (pointA ==None) and (pointB ==None):
+            return None
+        elif pointA ==None:
+            pointA=headB
+            pointB=pointB.next
+        elif pointB ==None:
+            pointB=headA
+            pointA=pointA.next
+        else:
+            pointA =pointA.next
+            pointB =pointB.next
+    return pointA
