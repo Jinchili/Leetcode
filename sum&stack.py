@@ -1,5 +1,5 @@
 import numpy as np
-###suppose to return pairs inside of list which add up to target value
+###suppose to return pairs inside of distincted list which add up to target value
 def twoSum(nums, target):
     """
     :type nums: List[int]
@@ -10,7 +10,10 @@ def twoSum(nums, target):
     pos_num=nums[np.array(nums)<target]
     com_num=target-pos_num
     id_num= np.isin(com_num,pos_num)*(com_num < pos_num)
-    return [np.asscalar(pos_num[id_num]),np.asscalar(com_num[id_num])]
+    if sum(id_num)==0:
+        return None
+    else :
+        return [np.asscalar(pos_num[id_num]),np.asscalar(com_num[id_num])]
 ###loop overt it 
 def twoSum(nums, target):
     """
@@ -19,7 +22,7 @@ def twoSum(nums, target):
     :rtype: List[int]
     """
     for i in nums:
-        if (target-i) in nums : return [i,target-i]
+        if ((target-i) in nums) and (i>target-i): return [i,target-i]
     return
 
 ###if output index##
