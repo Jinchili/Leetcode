@@ -24,3 +24,36 @@ def findAnagrams(s, p):
         if f1 == f2: res.append(i - windowLength + 1)
     
     return res
+
+
+## check if a single linked list has cycle
+def hasCycle(head):
+    """
+    :type head: ListNode
+    :rtype: bool
+    """
+    a_set=set()
+    while head != None:
+        if head not in a_set:
+            a_set.add(head)
+        else: return True
+        head=head.next
+    return False
+
+##two pointer approach
+
+def hasCycle(head):
+    """
+    :type head: ListNode
+    :rtype: bool
+    """
+    if head==None:
+        return False
+    slow=head
+    fast=head
+    while (fast.next != None) and (fast.next.next != None):
+        slow=slow.next
+        fast=fast.next.next
+        if slow == fast:
+            return True
+    return False
