@@ -13,3 +13,22 @@ def rob(nums):
         ))            
 
     return dp[-1] if dp else 0
+
+##search and insert a sorted list
+def searchInsert(nums, target):
+    """
+    :type nums: List[int]
+    :type target: int
+    :rtype: int
+    """
+    i=0
+    try:
+        value=nums.index(target)
+    except ValueError:
+        while target>nums[i]:
+            i=i+1
+            if i>(len(nums)-1):
+                value=i
+                break
+        value=i
+    return value
