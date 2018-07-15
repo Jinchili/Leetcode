@@ -14,3 +14,24 @@
 ##comment + code + review
 ##time complexity
 ##space complexity
+def linear_search(data,target):
+    for i in data:
+        if t == target:
+            return true
+    return False
+###sorted list£¨O£¨logn£©£©
+def binary_search_iterative(data,target):
+    n=len(data)
+    low=0
+    high=n-1
+    
+    while low<=high:
+        mid=(low+high)//2
+        if target>data[mid]:
+            low=mid+1
+        elif target<data[mid]:
+            high=mid-1
+        else:   
+            return mid
+    return False
+####
