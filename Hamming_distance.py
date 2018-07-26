@@ -44,3 +44,23 @@ def singleNumber(nums):
         except:
             noduplicated_list.append(item)
     return noduplicated_list.pop()
+
+
+a_string=")(1,2,3,4(,5))"
+
+def del_quo(a_string):
+    if a_string ==None:
+        return None
+    d_pair=[]
+    del_list=[]
+    for i in range(len(a_string)):
+        if a_string[i] =="(":
+            d_pair=d_pair+[i]
+        elif a_string[i] ==")":
+            if d_pair !=[]:
+                del_list=del_list+[d_pair.pop()]+[i]
+    b_list=''
+    for j in range(len(a_string)):
+        if j not in del_list:
+            b_list=b_list+a_string[j]
+    return str(b_list)
